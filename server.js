@@ -1,12 +1,12 @@
 /*********************************************************************************
 *  WEB700 – Assignment 04
-*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
+*  I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part 
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
 *  Name: Varsha Maria Alex
-   Student ID: 180085235
-   Date: 08-03-2025
+*  Student ID: 180085235
+*  Date: 08-03-2025
 *
 ********************************************************************************/ 
 const express = require("express");
@@ -14,8 +14,9 @@ const path = require("path");
 const collegeData = require("./modules/collegeData");
 const app = express();
 
-// Serve static files
-app.use(express.static("public"));
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, "public")));
+console.log("Serving static files from:", path.join(__dirname, "public"));
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
@@ -129,4 +130,3 @@ app.use((req, res) => {
 });
 
 module.exports = app;
-

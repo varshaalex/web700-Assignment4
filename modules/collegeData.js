@@ -1,12 +1,12 @@
 /*********************************************************************************
 *  WEB700 – Assignment 04
-*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
+*  I declare that this assignment is my own work in accordance with Seneca Academic Policy. No part 
 *  of this assignment has been copied manually or electronically from any other source 
 *  (including 3rd party web sites) or distributed to other students.
 * 
 *  Name: Varsha Maria Alex
-   Student ID: 180085235
-   Date: 08-03-2025
+*  Student ID: 180085235
+*  Date: 08-03-2025
 *
 ********************************************************************************/ 
 const fs = require("fs");
@@ -21,10 +21,8 @@ class Data {
 
 let dataInfo = null;
 
-// Initialize data by reading from JSON files
 module.exports.initialize = function () {
     return new Promise((resolve, reject) => {
-        // Use absolute path resolution to ensure compatibility with Vercel
         const courseFilePath = path.join(__dirname, "../data/courses.json");
         const studentFilePath = path.join(__dirname, "../data/students.json");
 
@@ -40,7 +38,6 @@ module.exports.initialize = function () {
                     return;
                 }
 
-                // Parse JSON data and initialize Data object
                 dataInfo = new Data(JSON.parse(studentData), JSON.parse(courseData));
                 resolve();
             });
@@ -48,7 +45,6 @@ module.exports.initialize = function () {
     });
 };
 
-// Get all students
 module.exports.getAllStudents = function () {
     return new Promise((resolve, reject) => {
         if (!dataInfo || dataInfo.students.length === 0) {
@@ -59,7 +55,6 @@ module.exports.getAllStudents = function () {
     });
 };
 
-// Get all teaching assistants
 module.exports.getTAs = function () {
     return new Promise((resolve, reject) => {
         if (!dataInfo) {
@@ -68,17 +63,14 @@ module.exports.getTAs = function () {
         }
 
         const filteredStudents = dataInfo.students.filter(student => student.TA === true);
-
         if (filteredStudents.length === 0) {
             reject("No results available");
             return;
         }
-
         resolve(filteredStudents);
     });
 };
 
-// Get all courses
 module.exports.getCourses = function () {
     return new Promise((resolve, reject) => {
         if (!dataInfo || dataInfo.courses.length === 0) {
@@ -89,7 +81,6 @@ module.exports.getCourses = function () {
     });
 };
 
-// Get student by student number
 module.exports.getStudentByNum = function (num) {
     return new Promise((resolve, reject) => {
         if (!dataInfo) {
@@ -98,17 +89,14 @@ module.exports.getStudentByNum = function (num) {
         }
 
         const foundStudent = dataInfo.students.find(student => student.studentNum == num);
-
         if (!foundStudent) {
             reject("No results available");
             return;
         }
-
         resolve(foundStudent);
     });
 };
 
-// Get students by course
 module.exports.getStudentsByCourse = function (course) {
     return new Promise((resolve, reject) => {
         if (!dataInfo) {
@@ -117,17 +105,14 @@ module.exports.getStudentsByCourse = function (course) {
         }
 
         const filteredStudents = dataInfo.students.filter(student => student.course == course);
-
         if (filteredStudents.length === 0) {
             reject("No results available");
             return;
         }
-
         resolve(filteredStudents);
     });
 };
 
-// Add a new student (in-memory solution for Vercel)
 module.exports.addStudent = function (studentData) {
     return new Promise((resolve, reject) => {
         if (!dataInfo) {
@@ -135,7 +120,6 @@ module.exports.addStudent = function (studentData) {
             return;
         }
 
-        // Prepare student data
         studentData.TA = studentData.TA ? true : false;
         studentData.studentNum = dataInfo.students.length + 1;
         studentData.course = parseInt(studentData.course);
@@ -153,11 +137,7 @@ module.exports.addStudent = function (studentData) {
             course: studentData.course
         };
 
-        // Add student to in-memory collection
         dataInfo.students.push(orderedStudent);
-        resolve(); // Resolve without writing to file (Vercel limitation)
+        resolve();
     });
 };
-
-
-
