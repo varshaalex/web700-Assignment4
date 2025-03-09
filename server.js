@@ -90,7 +90,7 @@ app.get("/students", (req, res) => {
 
 
 // Initialize and start the server
-collegeData.initialize()
+/*collegeData.initialize()
     .then(() => {
         app.listen(HTTP_PORT, () => {
             console.log(`Server listening on port ${HTTP_PORT}`);
@@ -98,8 +98,13 @@ collegeData.initialize()
     })
     .catch(err => {
         console.error("Failed to initialize data: ", err);
-    });
+    });*/
 
+module.exports = app;
+
+collegeData.initialize().catch((err) => {
+    console.error(err);
+});
 
 // Route to Handle Form Submission
 app.post("/students/add", (req, res) => {
