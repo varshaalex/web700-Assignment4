@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/css/theme.css">
+		<title>WEB700</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Varsha Maria Alex</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+					<li class="nav-item"><a class="nav-link nav-button small-button mx-2" href="/students/add">Add Student</a></li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container mt-4">
+			<div class="row">
+				<main class="col-md-12">
+					<!-- Start your code here -->
+					<h1>Tables</h1><hr>
+					<p>This section demonstrates the use of tables in HTML, including captions, table headers, row, and column spanning.</p>
+					
+					<div class="table-container">
+					<table class="table table-bordered">
+						<caption>Table 1: Pet Animals</caption>
+						<thead class="thead-dark">
+							<tr>
+								<th>Dog</th>
+								<th>Cat</th>
+								<th>Rabbit</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Husky</td>
+								<td>Russian Blue</td>
+								<td>Mini Lop</td>
+							</tr>
+							<tr>
+								<td>Shih Tzu</td>
+								<td>Maine Coon</td>
+								<td>Californian Rabbit</td>
+							</tr>
+							<tr>
+								<td>Poodle</td>
+								<td>Munchkin Cat</td>
+								<td>Rex Rabbit</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="3">These are some pet animal breeds</td>
+							</tr>
+						</tfoot>
+					</table>
+					<div class="table-container">
+						<table class="table table-bordered">
+							<caption>Table 2: Country and Capital</caption>
+							<thead class="thead-dark">
+								<tr>
+									<th>Country</th>
+									<th>Capital</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>India</td>
+									<td>New Delhi</td>
+								</tr>
+								<tr>
+									<td>Canada</td>
+									<td>Ottawa</td>
+								</tr>
+								<tr>
+									<td>Australia</td>
+									<td>Canberra</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2">Some major countries and their capitals</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+					<h1>List Section: List of Colors</h1>
+<hr> 
+<style>
+	ul {
+	  list-style-type: disc; 
+	  padding-left: 20px; 
+	}
+	
+	li {
+	  font-size: 16px;
+	}
+  </style>
+<ul>
+  <li>Red</li>
+  <li>Green</li>
+  <li>Blue
+    <ol>
+      <li>Turquoise</li>
+      <li>Sky Blue</li>
+      <li>Cyan</li>
+    </ol>
+  </li>
+  <li>Bronze Brown</li>
+  <li>Burnt Umber</li>
+</ul>
+
+<p>
+  In this section, I have shown a list of some common colors.
+</p>
+
+					
+					  <h1>Images</h1><hr>
+        <p>Below are some images sourced from Wikimedia Commons.</p>
+        <div class="media-section">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Snowboarder_in_halfpipe.jpg/800px-Snowboarder_in_halfpipe.jpg" alt="Snowboarder in halfpipe" width="300"> &nbsp;
+					  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/A_beautiful_road_with_leaves_falling.jpg" 
+							alt="A beautiful road with leaves falling" 
+							width="300">
+					  <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Cute_dog.jpg" 
+							alt="Cute dog" 
+							width="300"> &nbsp;
+        </div>
+					<br>
+					<h1>Audio</h1><hr>
+        <p>Click play to listen to the audio sample</p>
+        <div class="media-section">
+            <audio controls>
+                <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.mp3" type="audio/mpeg">
+                <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.ogg" type="audio/ogg">
+            </audio>
+        </div>
+				
+		<h1>Video</h1><hr>
+        <p>Here demonstrating how a video is embedded in HTML.</p>
+        <div class="media-section">
+            <video width="640" height="360" controls>
+                <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.mp4" type="video/mp4">
+                <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.ogg" type="video/ogg">
+                <source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.webm" type="video/webm">
+            </video>
+        </div>
+		
+
+					
+					
+					<!-- End your code here  -->
+
+
+
+				</main>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
